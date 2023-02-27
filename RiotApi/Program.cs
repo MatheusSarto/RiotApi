@@ -5,6 +5,7 @@ var app = builder.Build();
 AddLoLSummoners(app);
 AddLoLSpectator(app);
 AddLoLWatch(app);
+AddLoLStatus(app);
 
 
 app.Run();

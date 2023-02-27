@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\RiotApi.csproj": {}
+    "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\RiotApi\\RiotApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\RiotApi.csproj": {
+    "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\RiotApi\\RiotApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\RiotApi.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\RiotApi\\RiotApi.csproj",
         "projectName": "RiotApi",
-        "projectPath": "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\RiotApi.csproj",
+        "projectPath": "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\RiotApi\\RiotApi.csproj",
         "packagesPath": "C:\\Users\\Matheus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\obj\\",
+        "outputPath": "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\RiotApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

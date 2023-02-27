@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G/WdnIL7VLcK883zzuPw7kHEcUCWrG2W8aWdnDMvY8aSJCKCCK5OfJ4FDbzgYAoAn71q/iAlZPq5PUN0bPhEAw==",
+  "dgSpecHash": "4DPylGKbezTWMmFR4br63NAEW9XjfTrZ/RGUE4jZkbZTWYkwEHTbfYry26oXdzu0s+qUisC+8KadXCXqeMQUcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\RiotApi.csproj",
+  "projectFilePath": "C:\\Users\\Matheus\\Documents\\RiotApi\\RiotApi\\RiotApi\\RiotApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matheus\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
   ],

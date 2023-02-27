@@ -9,16 +9,19 @@
         #endregion
         public static string GetSpectator(string summonerId) { return $"/lol/spectator/v4/active-games/by-summoner/{summonerId}"; }
         #region LoL_Match
-        public static string GetMatchIdByPUUID(string puuid) { return $"/lol/match/v5/matches/by-puuid/{puuid}/ids"; }
+        public static string GetMatchIdsByPUUID(string puuid) { return $"/lol/match/v5/matches/by-puuid/{puuid}/ids"; }
         public static string GetMatchByID(string matchId) { return $"/lol/match/v5/matches/{matchId}"; }
+        public static string GetLoLStatus() { return "/lol/status/v4/platform-dataGet";  }
         #endregion
     }
 
     public static class API_KEY
     {
-        public static string Get_API_KEY() { return "RGAPI-9f938707-3677-40bc-9fb2-49c056ff655b"; }
+        /// <summary>
+        /// This method holds your Riot Api Key, you should not share it.
+        /// By default it's expecting to find a "RiotApiKey.txt" with the Api Key, on your Desktop.
+        /// </summary>
+        public static string Get_API_KEY() { return File.ReadAllText($"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\RioApiKey.txt"); }
     }
-
   
-     
 }

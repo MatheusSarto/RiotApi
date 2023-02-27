@@ -19,12 +19,12 @@
         public int DetectorWardsPlaced { get; set; }
         public int DoubleKills { get; set; }
         public int DragonKills { get; set; }
-        public Boolean FirstBloodAssit { get; set; }
-        public Boolean FirstBloodKill { get; set; }
-        public Boolean FirstTowerAssist { get; set; }
-        public Boolean FirstTowerKill { get; set; }
-        public Boolean GameEndedInEarlySurrender { get; set; }
-        public Boolean GameEndedInSurrender { get; set; }
+        public bool FirstBloodAssit { get; set; }
+        public bool FirstBloodKill { get; set; }
+        public bool FirstTowerAssist { get; set; }
+        public bool FirstTowerKill { get; set; }
+        public bool GameEndedInEarlySurrender { get; set; }
+        public bool GameEndedInSurrender { get; set; }
         public int GoldEarned { get; set; }
         public int GoldSpent { get; set; }
         public string IndividualPosition { get; set; }
@@ -40,7 +40,7 @@
         public int Item6 { get; set; }
         public int ItemsPurchased { get; set; }
         public int Kills { get; set; }
-        public int Lane { get; set; }
+        public string Lane { get; set; }
         public int LargestCriticalStrike { get; set; }
         public int LargestKillingSpree { get; set; }
         public int LargestMultiKill { get; set; }
@@ -57,6 +57,8 @@
         public int ParticipantId { get; set; }
         public int PentaKills { get; set; }
         public PerksDto Perks { get; set; }
+        public int PhysicalDamageDealt { get; set; }
+        public int PhysicalDamageDealtToChampions { get; set; }
         public int PhysicalDamageTaken { get; set; }
         public int ProfileIcon { get; set; }
         public string Puuid { get; set; }
@@ -76,7 +78,7 @@
         public string SummonerId { get; set; }
         public int SummonerLevel { get; set; }
         public string SummonerName { get; set; }
-        public Boolean TeamEarlySurrended { get; set; }
+        public bool TeamEarlySurrended { get; set; }
         public int TeamId { get; set; }
         public string TeamPosition { get; set; }
         public int TimeCCingOthers { get; set; }
@@ -102,6 +104,6 @@
         public int VisionWardsBoughtInGame { get; set; }
         public int WardsKilled { get; set; }
         public int WardsPlaced { get; set; }
-        public Boolean Win { get; set; }
+        public bool Win { get; set; }
     }
 }

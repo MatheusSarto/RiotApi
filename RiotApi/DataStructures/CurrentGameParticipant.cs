@@ -5,7 +5,7 @@
         public long ChampionId { get; set; }
         public Perks Perks_ { get; set; }
         public long ProfileIconId { get; set; }
-        public Boolean Bot { get; set; }
+        public bool Bot { get; set; }
         public long TeamId { get; set; }
         public string SummonerName { get; set; }
         public string SummonerId { get; set; }
