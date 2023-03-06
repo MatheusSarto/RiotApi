@@ -10,7 +10,7 @@
 
 # Bin Directories
 RiotApi/bin/
-RioApi/obj
+RioApi/obj/
 # User-specific files
 *.rsuser
 *.suo
