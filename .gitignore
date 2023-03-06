@@ -9,7 +9,8 @@
 *.sln
 
 # Bin Directories
-/RiotApi/RiotApi/bin/
+RiotApi/bin/
+RioApi/obj
 # User-specific files
 *.rsuser
 *.suo
