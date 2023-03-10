@@ -2,7 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 //add...
-AddLoLWatch(app);
-
+AddLoLStatus(app);
+AddLoLSummonerInfo(app);
 
 app.Run();

@@ -4,11 +4,11 @@ namespace RiotApi.RiotApiRequests
 {
     public partial class LoLAPI_Handler
     {
-        public SummonerDTO GetSummonerByName(string region, string summonerName)
+        public SummonerDTO GetSummonerByName(string summonerName)
         {
             HttpClient client = new HttpClient();
 
-            string url = $"{GetBaseUrl(region)}{GetSummonerByName(summonerName)}?api_key={API_KEY}";
+            string url = $"{GetBaseUrl(PlatformRoutingValue)}{SummonerByNameUrl(summonerName)}?api_key={API_KEY}";
             Console.WriteLine(url);
             var endpoint = new Uri(url);
 
@@ -20,11 +20,11 @@ namespace RiotApi.RiotApiRequests
             return responseObj;
         }
 
-        public SummonerDTO GetSummonerByPUUID(string region, string rsoPUUID)
+        public SummonerDTO GetSummonerByPUUID(string rsoPUUID)
         {
             HttpClient client = new HttpClient();
 
-            string url = $"{GetBaseUrl(region)}{GetSummonerByPUUID(rsoPUUID)}?api_key={API_KEY}";
+            string url = $"{GetBaseUrl(PlatformRoutingValue)}{SummonerByPUUIDUrl(rsoPUUID)}?api_key={API_KEY}";
             var endpoint = new Uri(url);
 
             var result = client.GetAsync(endpoint).Result;

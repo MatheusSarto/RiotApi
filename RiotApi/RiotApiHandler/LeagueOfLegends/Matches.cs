@@ -6,11 +6,11 @@ namespace RiotApi.RiotApiRequests
 {
     public partial class LoLAPI_Handler
     {
-        public List<string> GetMatchIdsByPUUID(string region, string puuid)
+        public List<string> GetMatchIdsByPUUID(string puuid)
         {
             HttpClient client = new HttpClient();
 
-            string url = $"{GetBaseUrl(region)}{GetMatchIdsByPUUID(puuid)}?api_key={API_KEY}";
+            string url = $"{GetBaseUrl(RegionalRoutingValue)}{GetMatchIdsByPUUID(puuid)}?api_key={API_KEY}";
             var uri = new Uri(url);
             
             var result = client.GetAsync(uri).Result;
@@ -21,19 +21,23 @@ namespace RiotApi.RiotApiRequests
             return responseObj;
         }
 
-        public MatchDto GetMatchByID(string region, string matchId)
+        public List<MatchDto> GetMatchesByID(List<string> matchIds)
         {
             HttpClient client = new HttpClient();
+            List<MatchDto> matches = new List<MatchDto>();
 
-            string url = $"{GetBaseUrl(region)}{GetMatchByID(matchId)}?api_key={API_KEY}";
-            var endpoint = new Uri(url);
+            matchIds.ForEach((matchId) => {
+                string url = $"{GetBaseUrl(RegionalRoutingValue)}{MatchByID_Url(matchId)}?api_key={API_KEY}";
+                var endpoint = new Uri(url);
 
-            var result = client.GetAsync(endpoint).Result;
-            var content = result.Content.ReadAsStringAsync().Result;
+                var result = client.GetAsync(endpoint).Result;
+                var content = result.Content.ReadAsStringAsync().Result;
 
-            MatchDto responseObj = Newtonsoft.Json.JsonConvert.DeserializeObject<MatchDto>(content);
+                MatchDto match = Newtonsoft.Json.JsonConvert.DeserializeObject<MatchDto>(content);
+                matches.Add(match);
+            });
 
-            return responseObj;
+            return matches;
         }
 
     }
