@@ -1,15 +1,15 @@
 ﻿using RiotApi.DataStructures.LeagueOfLegends;
+using RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL;
 
-namespace RiotApi.RiotApiRequests
+namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
-    public partial class LoLAPI_Handler
+    public class SpectatorRequests
     {
         public CurrentGameInfo GetSpectator(string encryptedSummonerId)
         {
             HttpClient client = new HttpClient();
 
-            string url = $"{GetBaseUrl(PlatformRoutingValue)}{SpectatorUrl(encryptedSummonerId)}?api_key={API_KEY}";
-            var endpoint = new Uri(url);
+            var endpoint = new Uri(URL.Spectator(encryptedSummonerId));
 
             var result = client.GetAsync(endpoint).Result;
             var content = result.Content.ReadAsStringAsync().Result;
@@ -19,5 +19,6 @@ namespace RiotApi.RiotApiRequests
             return responseObj;
         }
 
+        private SpectatorURL URL;
     }
 }

@@ -1,18 +1,17 @@
 ﻿using RiotApi.DataStructures.LeagueOfLegends;
-using System;
-using System.Runtime.InteropServices;
+using RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL;
 
-namespace RiotApi.RiotApiRequests
+namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
-    public partial class LoLAPI_Handler
+    public class MatchRequests
     {
-        public List<string> GetMatchIdsByPUUID(string puuid)
+        public List<string> GetMatchIds(string encryptedPUUID, long startTime, long endTime,
+            string queue, string type, int count, int start)
         {
             HttpClient client = new HttpClient();
 
-            string url = $"{GetBaseUrl(RegionalRoutingValue)}{GetMatchIdsByPUUID(puuid)}?api_key={API_KEY}";
-            var uri = new Uri(url);
-            
+            var uri = new Uri(URL.MatchIds(encryptedPUUID, startTime, endTime, queue, type, count, start));
+
             var result = client.GetAsync(uri).Result;
             var content = result.Content.ReadAsStringAsync().Result;
 
@@ -27,8 +26,7 @@ namespace RiotApi.RiotApiRequests
             List<MatchDto> matches = new List<MatchDto>();
 
             matchIds.ForEach((matchId) => {
-                string url = $"{GetBaseUrl(RegionalRoutingValue)}{MatchByID_Url(matchId)}?api_key={API_KEY}";
-                var endpoint = new Uri(url);
+                var endpoint = new Uri(URL.MatchByID(matchId));
 
                 var result = client.GetAsync(endpoint).Result;
                 var content = result.Content.ReadAsStringAsync().Result;
@@ -40,5 +38,6 @@ namespace RiotApi.RiotApiRequests
             return matches;
         }
 
+        private MatchURL URL;
     }
 }
