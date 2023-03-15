@@ -5,6 +5,11 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
     public class StatusRequests
     {
+        public StatusRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        {
+            URL = new StatusURL(regionalRoutingValue, paltaformRountingValue, apikey);
+        }
+
         public PlatformDataDto GetLoLStatus()
         {
             HttpClient client = new HttpClient();

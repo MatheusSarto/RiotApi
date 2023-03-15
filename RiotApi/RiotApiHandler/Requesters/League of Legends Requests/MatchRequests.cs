@@ -5,6 +5,11 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
     public class MatchRequests
     {
+        public MatchRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        {
+            URL = new MatchURL(regionalRoutingValue, paltaformRountingValue, apikey);
+        }
+
         public List<string> GetMatchIds(string encryptedPUUID, long startTime, long endTime,
             string queue, string type, int count, int start)
         {

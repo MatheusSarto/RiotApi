@@ -5,6 +5,12 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
     public class ChmapioMasteryRequests
     {
+        public ChmapioMasteryRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        { 
+            URL = new ChampionMasteryURL(regionalRoutingValue, paltaformRountingValue, apikey); 
+        }
+
+
         public List<ChampionMasteryDto> GetChampionMastery(string encryptedSummonerId)
         {
             HttpClient client = new HttpClient();

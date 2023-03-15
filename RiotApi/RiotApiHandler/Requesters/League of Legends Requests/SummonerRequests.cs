@@ -5,6 +5,11 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
     public class SummonerRequests
     {
+        public SummonerRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        {
+            URL = new SummonerURL(regionalRoutingValue, paltaformRountingValue, apikey);
+        }
+
         public SummonerDTO GetSummonerByName(string summonerName)
         {
             HttpClient client = new HttpClient();

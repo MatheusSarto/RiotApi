@@ -6,9 +6,9 @@
         {
             RegionalRoutingValue = regionalRoutingValue;
             PlataformRoutingValue = paltaformRountingValue;
-            APIKEY_QUERY = apikey;
+            APIKEY_QUERY = APIKEY_QUERY.Equals(apikey) ? apikey : APIKEY_QUERY;
         }
-
+      
         protected string GetBaseUrl(string region) { return $"https://{region}.api.riotgames.com"; }
         protected string GetPlataformRoutingValue() { return PlataformRoutingValue; }
         protected string GetRegionalRoutingValue() { return RegionalRoutingValue; }
@@ -16,6 +16,6 @@
 
         private string PlataformRoutingValue;
         private string RegionalRoutingValue;
-        private string APIKEY_QUERY;
+        private static string APIKEY_QUERY;
     }
 }
