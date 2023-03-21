@@ -1,8 +1,8 @@
 ﻿namespace RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL
 {
-    public class SummonerURL : URL
+    public class LoL_SummonerURL : URL
     {
-        public SummonerURL(string regionalRoutingValue, string paltaformRountingValue, string apikey) 
+        public LoL_SummonerURL(string regionalRoutingValue, string paltaformRountingValue, string apikey) 
             : base(regionalRoutingValue, paltaformRountingValue, apikey)  
         { 
         

@@ -1,8 +1,8 @@
 ﻿namespace RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL
 {
-    public class SpectatorURL : URL
+    public class LoL_SpectatorURL : URL
     {
-        public SpectatorURL(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        public LoL_SpectatorURL(string regionalRoutingValue, string paltaformRountingValue, string apikey)
             : base(regionalRoutingValue, paltaformRountingValue, apikey)
         {
 

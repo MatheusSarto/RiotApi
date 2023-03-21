@@ -21,10 +21,10 @@ partial class Program
 
             LoLAPI_Handler loLAPI_Handler = new LoLAPI_Handler(regional, plataform);
 
-            SummonerDTO summonerData = loLAPI_Handler.GetSummonerByName(summonername);
+            SummonerDTO summonerData = loLAPI_Handler.Summoner.GetSummonerByName(summonername);
 
-            List<string> matchIds = loLAPI_Handler.GetMatchIdsByPUUID(summonerData.PUUID);
-            List<MatchDto> matches = loLAPI_Handler.GetMatchesByID(matchIds);
+            List<string> matchIds = loLAPI_Handler.Match.GetMatchIds(summonerData.PUUID);
+            List<MatchDto> matches = loLAPI_Handler.Match.GetMatchesByID(matchIds);
 
              float winRate = 0;
              int magicDamageChampions = 0;
@@ -67,7 +67,7 @@ partial class Program
 
              float totalKDA = (totalKills + totalAssits) / totalDeaths;
 
-             List<ChampionMasteryDto> topMasteries = loLAPI_Handler.GetChampsMasteryTop(summonerData.Id, 3);
+             List<ChampionMasteryDto> topMasteries = loLAPI_Handler.ChampionMastery.GetChampionMasteryTop(summonerData.Id, 3);
 
              return JsonConvert.SerializeObject(
                  new { 

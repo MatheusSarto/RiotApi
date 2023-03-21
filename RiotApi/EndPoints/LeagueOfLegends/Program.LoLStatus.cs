@@ -11,10 +11,10 @@ partial class Program
     {
 
         app.MapGet("/lol/status", 
-        ([FromRoute] string plataform)  => {
-            LoLAPI_Handler loLAPI_Handler = new LoLAPI_Handler(plataform);
+        ([FromRoute] string plataformRoutingValue,string regionalRoutingValue)  => {
+            LoLAPI_Handler loLAPI_Handler = new LoLAPI_Handler(plataformRoutingValue ,plataformRoutingValue);
 
-            PlatformDataDto status = loLAPI_Handler.GetLoLStatus();
+            PlatformDataDto status = loLAPI_Handler.Status.GetLoLStatus();
             return status;
         });
     }

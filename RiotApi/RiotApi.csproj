@@ -10,4 +10,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="RiotApiHandler\Requesters\VALORANT Requests\" />
+    <Folder Include="RiotApiHandler\URL Manager\VALORANT URL\" />
+  </ItemGroup>
+
 </Project>

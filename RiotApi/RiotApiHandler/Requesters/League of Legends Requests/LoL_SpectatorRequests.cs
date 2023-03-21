@@ -3,11 +3,11 @@ using RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL;
 
 namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
-    public class SpectatorRequests
+    public class LoL_SpectatorRequests
     {
-        public SpectatorRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        public LoL_SpectatorRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
         {
-            URL = new SpectatorURL(regionalRoutingValue, paltaformRountingValue, apikey);
+            URL = new LoL_SpectatorURL(regionalRoutingValue, paltaformRountingValue, apikey);
         }
 
         public CurrentGameInfo GetSpectator(string encryptedSummonerId)
@@ -24,6 +24,6 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
             return responseObj;
         }
 
-        private SpectatorURL URL;
+        private LoL_SpectatorURL URL;
     }
 }

@@ -1,8 +1,8 @@
 ﻿namespace RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL
 {
-    public class StatusURL : URL
+    public class LoL_StatusURL : URL
     {
-        public StatusURL(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        public LoL_StatusURL(string regionalRoutingValue, string paltaformRountingValue, string apikey)
             : base(regionalRoutingValue, paltaformRountingValue,apikey)
         {
 

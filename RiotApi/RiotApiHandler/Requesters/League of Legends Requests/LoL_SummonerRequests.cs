@@ -3,11 +3,11 @@ using RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL;
 
 namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
-    public class SummonerRequests
+    public class LoL_SummonerRequests
     {
-        public SummonerRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        public LoL_SummonerRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
         {
-            URL = new SummonerURL(regionalRoutingValue, paltaformRountingValue, apikey);
+            URL = new LoL_SummonerURL(regionalRoutingValue, paltaformRountingValue, apikey);
         }
 
         public SummonerDTO GetSummonerByName(string summonerName)
@@ -52,6 +52,6 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
             return responseObj;
         }
 
-        private SummonerURL URL;
+        private LoL_SummonerURL URL;
     }
 }

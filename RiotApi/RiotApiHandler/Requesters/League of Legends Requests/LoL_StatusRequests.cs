@@ -3,11 +3,11 @@ using RiotApi.DataStructures.LeagueOfLegends;
 
 namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
-    public class StatusRequests
+    public class LoL_StatusRequests
     {
-        public StatusRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        public LoL_StatusRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
         {
-            URL = new StatusURL(regionalRoutingValue, paltaformRountingValue, apikey);
+            URL = new LoL_StatusURL(regionalRoutingValue, paltaformRountingValue, apikey);
         }
 
         public PlatformDataDto GetLoLStatus()
@@ -24,6 +24,6 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
             return responseObj;
         }
         
-        private StatusURL URL;
+        private LoL_StatusURL URL;
     }
 }

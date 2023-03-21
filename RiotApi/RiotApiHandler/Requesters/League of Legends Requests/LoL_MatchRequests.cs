@@ -3,11 +3,11 @@ using RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL;
 
 namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
-    public class MatchRequests
+    public class LoL_MatchRequests
     {
-        public MatchRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        public LoL_MatchRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
         {
-            URL = new MatchURL(regionalRoutingValue, paltaformRountingValue, apikey);
+            URL = new LoL_MatchURL(regionalRoutingValue, paltaformRountingValue, apikey);
         }
 
         public List<string> GetMatchIds(string encryptedPUUID, long startTime, long endTime,
@@ -15,7 +15,7 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
         {
             HttpClient client = new HttpClient();
 
-            var uri = new Uri(URL.MatchIds(encryptedPUUID, startTime, endTime, queue, type, count, start));
+            var uri = new Uri(URL.MatchIDs(encryptedPUUID, startTime, endTime, queue, type, count, start));
 
             var result = client.GetAsync(uri).Result;
             var content = result.Content.ReadAsStringAsync().Result;
@@ -43,6 +43,6 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
             return matches;
         }
 
-        private MatchURL URL;
+        private LoL_MatchURL URL;
     }
 }

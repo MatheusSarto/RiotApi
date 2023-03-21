@@ -1,13 +1,13 @@
 ﻿namespace RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL
 {
-    public class MatchURL : URL
+    public class LoL_MatchURL : URL
     {
-        public MatchURL(string regionalRoutingValue, string paltaformRountingValue, string apikey)
-            : base(regionalRoutingValue, paltaformRountingValue, apikey)
+        public LoL_MatchURL(string regionalRoutingValue, string platformRountingValue, string apikey)
+            : base(regionalRoutingValue, platformRountingValue, apikey)
         {
 
         }
-        public string MatchIds(string puuid, long startTime, long endTime, 
+        public string MatchIDs(string puuid, long startTime, long endTime, 
             string queue,string type, int count, int start) 
         {
             string endpoint = $"/lol/match/v5/matches/by-puuid/{puuid}/ids";
