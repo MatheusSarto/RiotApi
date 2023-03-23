@@ -2,8 +2,8 @@
 {
     public class LoL_SummonerURL : URL
     {
-        public LoL_SummonerURL(string regionalRoutingValue, string paltaformRountingValue, string apikey) 
-            : base(regionalRoutingValue, paltaformRountingValue, apikey)  
+        public LoL_SummonerURL(string regionalRoutingValue, string platformRoutingValue, string apikey) 
+            : base(regionalRoutingValue, platformRoutingValue, apikey)  
         { 
         
         }

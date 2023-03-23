@@ -3,11 +3,11 @@ using RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL;
 
 namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
-    public class ChmapioMasteryRequests
+    public class LoL_ChampioMasteryRequests
     {
-        public ChmapioMasteryRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        public LoL_ChampioMasteryRequests(string regionalRoutingValue, string platformRoutingValue, string apikey)
         { 
-            URL = new ChampionMasteryURL(regionalRoutingValue, paltaformRountingValue, apikey); 
+            URL = new ChampionMasteryURL(regionalRoutingValue, platformRoutingValue, apikey); 
         }
 
 
@@ -24,11 +24,12 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 
             return contentObj;
         }
-        public ChampionMasteryDto GetChampionMastery(string encryptedSummonerId, int championId)
+        public ChampionMasteryDto GetChampionMastery(string encryptedSummonerId, long? championId)
         {
             HttpClient client = new HttpClient();
+            if (championId == null) { championId = 3; }
 
-            var uri = new Uri(URL.ChampionMastery(encryptedSummonerId, championId));
+            var uri = new Uri(URL.ChampionMastery(encryptedSummonerId, championId.Value));
 
             var result = client.GetAsync(uri).Result;
             var content = result.Content.ReadAsStringAsync().Result;
@@ -38,11 +39,13 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
             return contentObj;
         }
 
-        public List<ChampionMasteryDto> GetChampionMasteryTop(string encryptedSummonerId, int count)
+        public List<ChampionMasteryDto> GetChampionMasteryTop(string encryptedSummonerId, int? count)
         {
             HttpClient client = new HttpClient();
 
-            var uri = new Uri(URL.ChampionMasteryTop(encryptedSummonerId, count));
+            if (count == null) { count = 3; }
+
+            var uri = new Uri(URL.ChampionMasteryTop(encryptedSummonerId, count.Value));
 
             var response = client.GetAsync(uri).Result;
             var content = response.Content.ReadAsStringAsync().Result;

@@ -2,8 +2,8 @@
 {
     public class ChampionMasteryURL : URL
     {
-        public ChampionMasteryURL(string regionalRoutingValue, string paltaformRountingValue, string apikey)
-            : base(regionalRoutingValue, paltaformRountingValue, apikey)
+        public ChampionMasteryURL(string regionalRoutingValue, string platformRoutingValue, string apikey)
+            : base(regionalRoutingValue, platformRoutingValue, apikey)
         {
 
         }

@@ -5,9 +5,9 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
     public class LoL_SummonerRequests
     {
-        public LoL_SummonerRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        public LoL_SummonerRequests(string regionalRoutingValue, string platformRoutingValue, string apikey)
         {
-            URL = new LoL_SummonerURL(regionalRoutingValue, paltaformRountingValue, apikey);
+            URL = new LoL_SummonerURL(regionalRoutingValue, platformRoutingValue, apikey);
         }
 
         public SummonerDTO GetSummonerByName(string summonerName)

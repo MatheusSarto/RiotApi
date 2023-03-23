@@ -9,8 +9,8 @@ namespace RiotApi.RiotApiHandler.Requesters.TFT_Requests
         {
             URL = new TFT_MatchURL(regionalRoutingValue, platformRoutingValue, apikey);
         }
-        public List<string> GetMatchIds(string encryptedPUUID, long startTime, long endTime,
-           int count, int start)
+        public List<string> GetMatchIds(string encryptedPUUID, long startTime = -1, long endTime = -1,
+           int count = 20, int start = 0)
         {
             HttpClient client = new HttpClient();
 

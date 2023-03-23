@@ -2,8 +2,8 @@
 {
     public class LoL_StatusURL : URL
     {
-        public LoL_StatusURL(string regionalRoutingValue, string paltaformRountingValue, string apikey)
-            : base(regionalRoutingValue, paltaformRountingValue,apikey)
+        public LoL_StatusURL(string regionalRoutingValue, string platformRoutingValue, string apikey)
+            : base(regionalRoutingValue, platformRoutingValue, apikey)
         {
 
         }

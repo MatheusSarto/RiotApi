@@ -5,9 +5,9 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
     public class LoL_StatusRequests
     {
-        public LoL_StatusRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        public LoL_StatusRequests(string regionalRoutingValue, string platformRoutingValue, string apikey)
         {
-            URL = new LoL_StatusURL(regionalRoutingValue, paltaformRountingValue, apikey);
+            URL = new LoL_StatusURL(regionalRoutingValue, platformRoutingValue, apikey);
         }
 
         public PlatformDataDto GetLoLStatus()

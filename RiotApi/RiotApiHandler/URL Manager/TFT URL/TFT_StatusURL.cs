@@ -5,8 +5,8 @@ namespace RiotApi.RiotApiHandler.URL_Manager.TFT_URL
 {
     public class TFT_StatusURL : URL
     {
-        public TFT_StatusURL(string regionalRoutingValue, string paltaformRountingValue, string apikey)
-           : base(regionalRoutingValue, paltaformRountingValue, apikey)
+        public TFT_StatusURL(string regionalRoutingValue, string platformRoutingValue, string apikey)
+           : base(regionalRoutingValue, platformRoutingValue, apikey)
         {
 
         }

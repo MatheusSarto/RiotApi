@@ -2,8 +2,8 @@
 {
     public class LoL_SpectatorURL : URL
     {
-        public LoL_SpectatorURL(string regionalRoutingValue, string paltaformRountingValue, string apikey)
-            : base(regionalRoutingValue, paltaformRountingValue, apikey)
+        public LoL_SpectatorURL(string regionalRoutingValue, string platformRoutingValue, string apikey)
+            : base(regionalRoutingValue, platformRoutingValue, apikey)
         {
 
         }

@@ -5,9 +5,9 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
     public class LoL_SpectatorRequests
     {
-        public LoL_SpectatorRequests(string regionalRoutingValue, string paltaformRountingValue, string apikey)
+        public LoL_SpectatorRequests(string regionalRoutingValue, string platformRoutingValue, string apikey)
         {
-            URL = new LoL_SpectatorURL(regionalRoutingValue, paltaformRountingValue, apikey);
+            URL = new LoL_SpectatorURL(regionalRoutingValue, platformRoutingValue, apikey);
         }
 
         public CurrentGameInfo GetSpectator(string encryptedSummonerId)
