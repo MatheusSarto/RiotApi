@@ -13,7 +13,7 @@
             string endpoint = $"/tft/league/v1/entries/by-summoner/{summonerId}";
             string query_parameter = $"{GetApiKeyQuery()}";
 
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_parameter;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_parameter;
 
 
             return url;

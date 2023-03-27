@@ -9,15 +9,15 @@ namespace RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL
         {
 
         }
-        public string MatchIDs(string puuid, Specifications_MatchIds specifications) 
+        public string MatchIDs(string encryptedPUUID, Specifications_MatchIds specifications) 
         {
-            string endpoint = $"/lol/match/v5/matches/by-puuid/{puuid}/ids";
+            string endpoint = $"/lol/match/v5/matches/by-puuid/{encryptedPUUID}/ids";
 
-            string query_parameters = $"{GetApiKeyQuery}&start={specifications.Start}&count={specifications.Count}";
-            if (specifications.StartTime != -1) { query_parameters += $"&startTime ={specifications.StartTime}"; }
-            if (specifications.EndTime != -1) { query_parameters += $" &endTime={specifications.EndTime};"; }
-            if (specifications.Queue != -1) { query_parameters += $"&queue={specifications.Queue}"; }
-            if (specifications.Type != String.Empty) { query_parameters += $"&type={specifications.Type}"; }
+            string query_parameters = $"{GetApiKeyQuery()}&start={specifications.Start}&count={specifications.Count}";
+            if (specifications.StartTime != null) { query_parameters += $"&startTime ={specifications.StartTime}"; }
+            if (specifications.EndTime != null) { query_parameters += $" &endTime={specifications.EndTime};"; }
+            if (specifications.Queue != null) { query_parameters += $"&queue={specifications.Queue}"; }
+            if (specifications.Type != null) { query_parameters += $"&type={specifications.Type}"; }
          
 
             string url = GetBaseUrl(GetRegionalRoutingValue()) + endpoint + query_parameters;

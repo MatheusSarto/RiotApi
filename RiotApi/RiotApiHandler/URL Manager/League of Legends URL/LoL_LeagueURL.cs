@@ -14,7 +14,7 @@ namespace RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL
             string endpoint = $"/lol/league/v4/entries/by-summoner/{encryptedSummonerId}";
             string query_parameters = $"{GetApiKeyQuery}";
 
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_parameters;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_parameters;
             
             return url;
         }

@@ -13,7 +13,7 @@
             string endpoint = $"/tft/summoner/v1/summoners/by-name/{summonerName}";
             string query_parameters = $"{GetApiKeyQuery()}";
 
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_parameters;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_parameters;
 
             return url;
         }
@@ -23,7 +23,7 @@
             string endpoint = $"/tft/summoner/v1/summoners/by-puuid/{encryptedPUUID}";
             string query_parameters = $"{GetApiKeyQuery()}";
 
-            string url = GetBaseUrl(GetPlataformRoutingValue()) +endpoint + query_parameters;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) +endpoint + query_parameters;
 
             return url;
         }

@@ -1,5 +1,10 @@
 ﻿namespace RiotApi.DataStructures.LeagueOfLegends
 {
+    /**
+     * \class ParticipantDto
+     * \file ParticipantDto.cs
+     * \date 25/03/2023
+     */
     public class ParticipantDto
     {
         public int Assists { get; set; }
@@ -7,8 +12,16 @@
         public int BountyLevel { get; set; }
         public int ChampExperience { get; set; }
         public int ChampLevel { get; set; }
+
+        /**
+         * @brief Prior to Patch 11.4, on Feb 18th, 2021, This Field Returned Invalid ChampionIds. We Recommend Determining The Champion Based on The ChampionName Field For Matches Played Prior to Patch 11.4.
+         */
         public int ChampionId { get; set; }
         public string ChampionName { get; set; }
+
+        /**
+         * @brief This Field is Currently Only Utilized For Kayn's Transformations. (Legal Values: 0 - None, 1 - Slayer, 2 - Assassin)
+         */
         public int ChampionTransform { get; set; }
         public int ConsumablesPurchased { get; set; }
         public int DamageDealtToBuildings { get; set; }
@@ -27,9 +40,13 @@
         public bool GameEndedInSurrender { get; set; }
         public int GoldEarned { get; set; }
         public int GoldSpent { get; set; }
+
+        /**
+         * @brief Both individualPosition And TeamPosition Are Computed by The Game Server And Are Different Versions of The Most Likely Position Played by a Player. The IndividualPosition is The Best Guess For Which Position The Player Actually Played in Isolation of Anything Else. The TeamPosition is The Best Guess For Which Position The Player Actually Played if we Add The Constraint That Each Team Must Have One Top Player, One Jungle, One Middle, Etc. Generally The Recommendation is to Use The TeamPosition Field Over The IndividualPosition Field.
+         */
         public string IndividualPosition { get; set; }
-        public int InhibtorKills { get; set; }
-        public int InhibtorTakedowns { get; set; }
+        public int InhibItorKills { get; set; }
+        public int InhibitorTakedowns { get; set; }
         public int inhibitorsLost { get; set; }
         public int Item0 { get; set; }
         public int Item1 { get; set; }
@@ -80,6 +97,10 @@
         public string SummonerName { get; set; }
         public bool TeamEarlySurrended { get; set; }
         public int TeamId { get; set; }
+
+        /**
+         * @brief Both IndividualPosition And TeamPosition Are Computed by The Game Server And Are Different Versions of The Most Likely Position Played by a Player. The IndividualPosition is The Best Guess For Which Position The Player Actually Played in Isolation of Anything Else. The TeamPosition is The Best Guess For Which Position The Player Actually Played if we Add The Constraint That Each Team Must Have One Top Player, One Jungle, One Middle, Etc. Generally The Recommendation is to Use The TeamPosition Field Over The IndividualPosition Field.
+         */
         public string TeamPosition { get; set; }
         public int TimeCCingOthers { get; set; }
         public int TimePlayed { get; set; }

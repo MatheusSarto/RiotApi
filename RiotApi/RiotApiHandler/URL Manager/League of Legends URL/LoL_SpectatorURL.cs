@@ -12,7 +12,7 @@
             string endpoint = $"/lol/spectator/v4/active-games/by-summoner/{encryptedSummonerId}";
             string query_parameters = $"{GetApiKeyQuery()}";
 
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_parameters;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_parameters;
 
             return url; 
         }

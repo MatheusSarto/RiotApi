@@ -14,7 +14,7 @@
             string endpoint = $"/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}";
             string query_parameters = $"{GetApiKeyQuery()}";
 
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_parameters;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_parameters;
             
             return url;
         }
@@ -23,7 +23,7 @@
             string endpoint = $"/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}/by-champion/{championId}";
             string query_parameters = $"{GetApiKeyQuery()}";
             
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_parameters;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_parameters;
 
             return url; 
         }
@@ -32,7 +32,7 @@
             string endpoint = $"/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}/top";
             string query_parameters = $"{GetApiKeyQuery()}&count={count}";
             
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_parameters;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_parameters;
 
             return url;
         }
@@ -41,7 +41,7 @@
             string endpoint = $"/lol/champion-mastery/v4/scores/by-summoner/{encryptedSummonerId}";
             string query_paramenters = $"{GetApiKeyQuery()}";
 
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_paramenters;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_paramenters;
 
             return url; 
         }

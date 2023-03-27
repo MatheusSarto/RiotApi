@@ -10,11 +10,11 @@
 
         public string Status() 
         { 
-            string endpoint = "/lol/status/v4/platform-dataGet";
-            string query_parameters = $"{GetApiKeyQuery}";
+            string endpoint = "/lol/status/v4/platform-data";
+            string query_parameters = $"{GetApiKeyQuery()}";
 
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_parameters;
-
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_parameters;
+           
             return url; 
         }
     }

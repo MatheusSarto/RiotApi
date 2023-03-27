@@ -20,7 +20,7 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
             var result = client.GetAsync(uri).Result;
             var content = result.Content.ReadAsStringAsync().Result;
 
-            List<string> responseObj = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(content);
+            List<string> responseObj = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(content).ToList<string>();
 
             return responseObj;
         }

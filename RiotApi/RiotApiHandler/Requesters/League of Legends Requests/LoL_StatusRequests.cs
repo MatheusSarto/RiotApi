@@ -10,7 +10,7 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
             URL = new LoL_StatusURL(regionalRoutingValue, platformRoutingValue, apikey);
         }
 
-        public PlatformDataDto GetLoLStatus()
+        public string GetLoLStatus()
         {
             HttpClient client = new HttpClient();
 
@@ -21,7 +21,7 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 
             PlatformDataDto responseObj = Newtonsoft.Json.JsonConvert.DeserializeObject<PlatformDataDto>(content);
 
-            return responseObj;
+            return content;
         }
         
         private LoL_StatusURL URL;

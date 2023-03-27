@@ -7,20 +7,17 @@ using RiotApi.RiotApiRequests;
 
 partial class Program
 {
-    /// <summary>
-    /// Retrieve All League Of Legends Summoner Info
-    /// </summary>
-    /// <param name="app"></param>
-    public class ChampionWins
+    /**
+    * @brief  Retrieve All League Of Legends Summoner Info.
+    *\class SummonerSummaryJson
+    *\file SummonerSummaryJson.cs
+    *\date 27/03/2023
+    */
+    private static void AddLoLSummonerInfo(WebApplication app) 
     {
-        public string ChampionName { get; set; }
-        public int Wins { get; set; }
-    };
-
-    private static void AddLoLSummonerInfo(WebApplication app)
-    {
+        /**< Detailed Enpoint Responsible For Returning a Custom Summoner Summary to The Client */
         app.MapGet("/lol/summoner/summary/{summonername}"
-        , ([FromRoute] string summonername, SummonerSummaryJson requestJson) => {
+        , ([FromRoute] string summonername, [FromBody] SummonerSummaryJson requestJson) => {
             LoLAPI_Handler loLAPI_Handler = new LoLAPI_Handler(requestJson);
 
             SummonerDTO summonerData = loLAPI_Handler.Summoner.GetSummonerByName(summonername);
@@ -43,9 +40,9 @@ partial class Program
             int totalKills = 0;
             int totalAssits = 0;
 
-            float avarageKDA = 0;
-            float bestKDA = 0;
-            float worstKDA = 10000;
+            double avarageKDA = 0;
+            double bestKDA = 0;
+            double worstKDA = 10000;
 
             string matchQueue = "";
 
@@ -58,32 +55,30 @@ partial class Program
                  totalDeaths += playerMatchData.Deaths;
                  totalAssits += playerMatchData.Assists;
 
-                 float currentKDA = (playerMatchData.Kills + playerMatchData.Assists) / playerMatchData.Deaths;
+                 float currentKDA = (playerMatchData.Deaths == 0) ? (playerMatchData.Kills + playerMatchData.Assists) : (playerMatchData.Kills + playerMatchData.Assists) / playerMatchData.Deaths;
                  bestKDA = (currentKDA > bestKDA) ? currentKDA : bestKDA;
                  worstKDA = (currentKDA < worstKDA) ? currentKDA : worstKDA;
-                 
-                 if (playerMatchData.Win == true)
+
+                 if (chmapionsWins.Any(x => x.ChampionName == playerMatchData.ChampionName) == false)
                  {
-                     if (playerMatchData.TeamId == 100) { redTeamWins++; }
-                     else { blueTeamWins++; }
+                     chmapionsWins.Add(new ChampionWins { ChampionName = playerMatchData.ChampionName, Wins = 0 });
                  }
 
-                 if (chmapionsWins.Any(x => x.ChampionName == playerMatchData.ChampionName) == true)
+                 if (playerMatchData.Win == true)
                  {
                      int index = chmapionsWins.FindIndex(x => String.Equals(x.ChampionName, playerMatchData.ChampionName));
                      chmapionsWins[index].Wins++;
-                 }
-                 else 
-                 {
-                     chmapionsWins.Add(new ChampionWins { ChampionName = playerMatchData.ChampionName, Wins = 1 }) ;
+
+                     if (playerMatchData.TeamId == 100) { redTeamWins = redTeamWins + 1; }
+                     else { blueTeamWins = blueTeamWins + 1; }
                  }
              });
 
             avarageKDA = (totalKills + totalAssits) / totalDeaths;
 
             winRate = (redTeamWins + blueTeamWins) / requestJson.MatchIdSpecifications.Count;
-            redTeamWinRate = (float)(redTeamWins / (redTeamWins + blueTeamWins)) * 100;
-            blueTeamWinRate = (float)(blueTeamWins / (redTeamWins + blueTeamWins)) * 100;
+            redTeamWinRate = (redTeamWins / (redTeamWins + blueTeamWins) * 100);
+            blueTeamWinRate = (blueTeamWins / (redTeamWins + blueTeamWins) * 100);
 
             if (requestJson.MatchIdSpecifications.Queue == 420) { matchQueue = "RANKED_SOLO_5v5"; }
             else if (requestJson.MatchIdSpecifications.Queue == 440) { matchQueue = "RANKED_FLEX_SR"; }

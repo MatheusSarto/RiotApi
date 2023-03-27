@@ -13,8 +13,8 @@
             string endpoint = $"/lol/summoner/v4/summoners/by-name/{summonerName}";
             string query_paramenters = $"{GetApiKeyQuery()}";
 
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_paramenters;
-
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_paramenters;
+            Console.WriteLine($"Url: {url}");
             return url; 
         }
         public string ByPUUID(string puuid)
@@ -22,7 +22,7 @@
             string endpoint = $"/lol/summoner/v4/summoners/by-puuid/{puuid}";
             string query_parameters = $"{GetApiKeyQuery()}";
 
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_parameters;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_parameters;
 
             return url;
         }
@@ -31,7 +31,7 @@
             string endpoint = $"/fulfillment/v1/summoners/by-puuid/{rsopuuid}";
             string query_parameters = $"{GetApiKeyQuery()}";
 
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_parameters;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_parameters;
 
             return url;
         }

@@ -13,8 +13,10 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
         public LeagueEntryDTO BySummoner(string encryptedSummonerId)
         { 
             HttpClient client = new HttpClient();
+
+            var uri = new Uri(URL.BySummoner(encryptedSummonerId));
             
-            var result = client.GetAsync(URL.BySummoner(encryptedSummonerId)).Result;
+            var result = client.GetAsync(uri).Result;
             var content = result.Content.ReadAsStringAsync().Result;
 
             LeagueEntryDTO responseObj = Newtonsoft.Json.JsonConvert.DeserializeObject<LeagueEntryDTO>(content);

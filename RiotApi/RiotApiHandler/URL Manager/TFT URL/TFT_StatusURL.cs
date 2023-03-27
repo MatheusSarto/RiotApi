@@ -15,7 +15,7 @@ namespace RiotApi.RiotApiHandler.URL_Manager.TFT_URL
         {
             string endpoint = "/tft/status/v1/platform-data";
             string query_parameters = $"{GetApiKeyQuery}";
-            string url = GetBaseUrl(GetPlataformRoutingValue()) + endpoint + query_parameters;
+            string url = GetBaseUrl(GetPltaformRoutingValue()) + endpoint + query_parameters;
 
             return url;
         }

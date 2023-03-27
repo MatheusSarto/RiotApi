@@ -1,5 +1,11 @@
 ﻿namespace RiotApi.DataStructures.LeagueOfLegends
 {
+    /**
+     * @brief Server And Game Information.
+     * \class PlatformDataDto
+     * \file PlatformDataDto.cs
+     * \date 25/03/2023
+     */
     public class PlatformDataDto
     {
         public string Id { get; set; }
