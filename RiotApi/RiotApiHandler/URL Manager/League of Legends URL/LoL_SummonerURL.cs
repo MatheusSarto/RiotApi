@@ -1,8 +1,10 @@
-﻿namespace RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL
+﻿using RegionalRoutingValues = RiotApi.DataStructures.RegionalRoutingValues;
+using PlatformRoutingValues = RiotApi.DataStructures.PlatformRoutingValues;
+namespace RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL
 {
     public class LoL_SummonerURL : URL
     {
-        public LoL_SummonerURL(string regionalRoutingValue, string platformRoutingValue, string apikey) 
+        public LoL_SummonerURL(RegionalRoutingValues regionalRoutingValue, PlatformRoutingValues platformRoutingValue, string apikey) 
             : base(regionalRoutingValue, platformRoutingValue, apikey)  
         { 
         

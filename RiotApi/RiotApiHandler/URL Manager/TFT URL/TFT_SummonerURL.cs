@@ -1,8 +1,10 @@
-﻿namespace RiotApi.RiotApiHandler.URL_Manager.TFT_URL
+﻿using RegionalRoutingValues = RiotApi.DataStructures.RegionalRoutingValues;
+using PlatformRoutingValues = RiotApi.DataStructures.PlatformRoutingValues;
+namespace RiotApi.RiotApiHandler.URL_Manager.TFT_URL
 {
     public class TFT_SummonerURL : URL
     {
-        public TFT_SummonerURL(string regionalRoutingValue, string platformRountingValue, string apikey) : 
+        public TFT_SummonerURL(RegionalRoutingValues regionalRoutingValue, PlatformRoutingValues platformRountingValue, string apikey) : 
             base(regionalRoutingValue, platformRountingValue, apikey)
         { 
         

@@ -1,10 +1,12 @@
-﻿using RiotApi.DataStructures;
+﻿using RegionalRoutingValues   = RiotApi.DataStructures.RegionalRoutingValues;
+using PlatformRoutingValues   = RiotApi.DataStructures.PlatformRoutingValues;
+using Specifications_MatchIds = RiotApi.DataStructures.Specifications_MatchIds;
 
 namespace RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL
 {
     public class LoL_MatchURL : URL
     {
-        public LoL_MatchURL(string regionalRoutingValue, string platformRountingValue, string apikey)
+        public LoL_MatchURL(RegionalRoutingValues regionalRoutingValue, PlatformRoutingValues platformRountingValue, string apikey)
             : base(regionalRoutingValue, platformRountingValue, apikey)
         {
 

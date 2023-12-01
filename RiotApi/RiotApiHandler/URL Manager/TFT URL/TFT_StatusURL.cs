@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
-using RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL;
-
+﻿using RegionalRoutingValues = RiotApi.DataStructures.RegionalRoutingValues;
+using PlatformRoutingValues = RiotApi.DataStructures.PlatformRoutingValues;
 namespace RiotApi.RiotApiHandler.URL_Manager.TFT_URL
 {
     public class TFT_StatusURL : URL
     {
-        public TFT_StatusURL(string regionalRoutingValue, string platformRoutingValue, string apikey)
+        public TFT_StatusURL(RegionalRoutingValues regionalRoutingValue, PlatformRoutingValues platformRoutingValue, string apikey)
            : base(regionalRoutingValue, platformRoutingValue, apikey)
         {
 

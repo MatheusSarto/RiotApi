@@ -1,11 +1,12 @@
 ﻿using RiotApi.DataStructures.LeagueOfLegends;
 using RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL;
-
+using RegionalRoutingValues = RiotApi.DataStructures.RegionalRoutingValues;
+using PlatformRoutingValues = RiotApi.DataStructures.PlatformRoutingValues;
 namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
     public class LoL_ChampioMasteryRequests
     {
-        public LoL_ChampioMasteryRequests(string regionalRoutingValue, string platformRoutingValue, string apikey)
+        public LoL_ChampioMasteryRequests(RegionalRoutingValues regionalRoutingValue, PlatformRoutingValues platformRoutingValue, string apikey)
         { 
             URL = new ChampionMasteryURL(regionalRoutingValue, platformRoutingValue, apikey); 
         }

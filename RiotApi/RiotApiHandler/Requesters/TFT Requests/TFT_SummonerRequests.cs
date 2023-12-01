@@ -1,11 +1,12 @@
 ﻿using RiotApi.DataStructures.LeagueOfLegends;
 using RiotApi.RiotApiHandler.URL_Manager.TFT_URL;
-
+using RegionalRoutingValues = RiotApi.DataStructures.RegionalRoutingValues;
+using PlatformRoutingValues = RiotApi.DataStructures.PlatformRoutingValues;
 namespace RiotApi.RiotApiHandler.Requesters.TFT_Requests
 {
     public class TFT_SummonerRequests
     {
-        public TFT_SummonerRequests(string regionalRoutingValue, string platformRoutingValue, string apikey)
+        public TFT_SummonerRequests(RegionalRoutingValues regionalRoutingValue, PlatformRoutingValues platformRoutingValue, string apikey)
         {
             URL = new TFT_SummonerURL(regionalRoutingValue, platformRoutingValue, apikey);
         }

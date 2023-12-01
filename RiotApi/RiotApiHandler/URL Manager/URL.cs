@@ -1,8 +1,10 @@
-﻿namespace RiotApi.RiotApiHandler
+﻿using RegionalRoutingValues = RiotApi.DataStructures.RegionalRoutingValues;
+using PlatformRoutingValues = RiotApi.DataStructures.PlatformRoutingValues;
+namespace RiotApi.RiotApiHandler
 {
     public class URL
     {
-        public URL(string regionalRoutingValue, string paltaformRountingValue,string apikey) 
+        public URL(RegionalRoutingValues regionalRoutingValue, PlatformRoutingValues paltaformRountingValue,string apikey) 
         {
             RegionalRoutingValue = regionalRoutingValue;
             PlataformRoutingValue = paltaformRountingValue;
@@ -10,12 +12,12 @@
         }
       
         protected string GetBaseUrl(string region) { return $"https://{region}.api.riotgames.com"; }
-        protected string GetPltaformRoutingValue() { return PlataformRoutingValue; }
-        protected string GetRegionalRoutingValue() { return RegionalRoutingValue; }
+        protected string GetPltaformRoutingValue() { return PlataformRoutingValue.ToString(); }
+        protected string GetRegionalRoutingValue() { return RegionalRoutingValue.ToString(); }
         protected string GetApiKeyQuery() { return $"?api_key={APIKEY_QUERY}"; }
 
-        private string PlataformRoutingValue;
-        private string RegionalRoutingValue;
+        private PlatformRoutingValues PlataformRoutingValue;
+        private RegionalRoutingValues RegionalRoutingValue;
         private string APIKEY_QUERY;
     }
 }

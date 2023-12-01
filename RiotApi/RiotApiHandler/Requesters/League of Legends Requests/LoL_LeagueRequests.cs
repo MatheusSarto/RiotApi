@@ -1,16 +1,17 @@
 ﻿using RiotApi.DataStructures.LeagueOfLegends;
 using RiotApi.RiotApiHandler.URL_Manager.League_of_Legends_URL;
-
+using RegionalRoutingValues = RiotApi.DataStructures.RegionalRoutingValues;
+using PlatformRoutingValues = RiotApi.DataStructures.PlatformRoutingValues;
 namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
 {
     public class LoL_LeagueRequests
     {
-        public LoL_LeagueRequests(string regionalRoutingValue, string platformRoutingValue, string apikey)
+        public LoL_LeagueRequests(RegionalRoutingValues regionalRoutingValue, PlatformRoutingValues platformRoutingValue, string apikey)
         {
             URL = new LoL_LeagueURL(regionalRoutingValue, platformRoutingValue, apikey);
         }
 
-        public LeagueEntryDTO BySummoner(string encryptedSummonerId)
+        public List<LeagueEntryDTO> BySummoner(string encryptedSummonerId)
         { 
             HttpClient client = new HttpClient();
 
@@ -19,7 +20,7 @@ namespace RiotApi.RiotApiHandler.Requesters.League_of_Legends_Requests
             var result = client.GetAsync(uri).Result;
             var content = result.Content.ReadAsStringAsync().Result;
 
-            LeagueEntryDTO responseObj = Newtonsoft.Json.JsonConvert.DeserializeObject<LeagueEntryDTO>(content);
+            List<LeagueEntryDTO> responseObj = Newtonsoft.Json.JsonConvert.DeserializeObject<List<LeagueEntryDTO>>(content);
 
             return responseObj;
         }

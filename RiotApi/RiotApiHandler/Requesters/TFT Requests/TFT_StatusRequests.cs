@@ -2,14 +2,15 @@
 using RiotApi.RiotApiHandler.URL_Manager.TFT_URL;
 using RiotApi.DataStructures.LeagueOfLegends;
 using Microsoft.AspNetCore.Mvc.Routing;
-
+using RegionalRoutingValues = RiotApi.DataStructures.RegionalRoutingValues;
+using PlatformRoutingValues = RiotApi.DataStructures.PlatformRoutingValues;
 namespace RiotApi.RiotApiHandler.Requesters.TFT_Requests
 {
     public class TFT_StatusRequests
     {
         
 
-        public TFT_StatusRequests(string regionalRoutingValue, string platformRountingValue, string apikey)
+        public TFT_StatusRequests(RegionalRoutingValues regionalRoutingValue, PlatformRoutingValues platformRountingValue, string apikey)
         {
             URL = new TFT_StatusURL(regionalRoutingValue, platformRountingValue, apikey);
         }

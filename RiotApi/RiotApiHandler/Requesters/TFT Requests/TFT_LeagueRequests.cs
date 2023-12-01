@@ -1,12 +1,13 @@
 ﻿using RiotApi.DataStructures.LeagueOfLegends;
 using RiotApi.RiotApiHandler.URL_Manager.TFT_URL;
-
+using RegionalRoutingValues = RiotApi.DataStructures.RegionalRoutingValues;
+using PlatformRoutingValues = RiotApi.DataStructures.PlatformRoutingValues;
 namespace RiotApi.RiotApiHandler.Requesters.TFT_Requests
 {
     public class TFT_LeagueRequests
     {
 
-        public TFT_LeagueRequests(string regionalRoutingValue, string platformRountingValue, string apikey)
+        public TFT_LeagueRequests(RegionalRoutingValues regionalRoutingValue, PlatformRoutingValues platformRountingValue, string apikey)
         {
             URL = new TFT_LeagueURL(regionalRoutingValue, platformRountingValue, apikey);
         }

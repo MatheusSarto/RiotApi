@@ -1,9 +1,11 @@
-﻿namespace RiotApi.RiotApiHandler.URL_Manager.TFT_URL
+﻿using RegionalRoutingValues = RiotApi.DataStructures.RegionalRoutingValues;
+using PlatformRoutingValues = RiotApi.DataStructures.PlatformRoutingValues;
+namespace RiotApi.RiotApiHandler.URL_Manager.TFT_URL
 {
     public class TFT_MatchURL : URL
     {
-        public TFT_MatchURL(string regionalRoutingValue, string platformRountingValue, string apikey) : 
-            base(platformRountingValue, regionalRoutingValue, apikey)
+        public TFT_MatchURL(RegionalRoutingValues regionalRoutingValue, PlatformRoutingValues platformRountingValue, string apikey) : 
+            base(regionalRoutingValue, platformRountingValue, apikey)
         {
 
 
